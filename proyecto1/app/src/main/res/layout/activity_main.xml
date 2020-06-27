@@ -19,6 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="410dp"
         android:layout_height="486dp"
         android:layout_marginTop="24dp"
