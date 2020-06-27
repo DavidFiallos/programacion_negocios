@@ -34,7 +34,7 @@ public class Main2Activity extends AppCompatActivity {
 
         for (int i=0; i<listJson.length(); i++){
             try {
-                ListaItems.append("Nombre: " + listJson.getJSONObject(i).getString("Nombre").toString()+ "\nEdad:  " + listJson.getJSONObject(i).getString("Edad").toString()+"\n\t -----------\n");
+                ListaItems.append("Nombre: " + listJson.getJSONObject(i).getString("Nombre").toString()+ "\nEdad:  " + listJson.getJSONObject(i).getString("Edad").toString()+"\nGenero:"+listJson.getJSONObject(i).getString("Genero").toString()+"\n\t -----------\n");
             } catch (JSONException e) {
                 e.printStackTrace();
             }

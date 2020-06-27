@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
     EditText ptnombre;
     EditText ptedad;
     RadioGroup radioGroup;
-    RadioButton radioButton;
     private SharedPreferences preference;
     private SharedPreferences.Editor editor;
     private JSONArray ImmuniD;
@@ -30,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         ptnombre = findViewById(R.id.ptnombre);
         ptedad = findViewById(R.id.ptedad);
+        radioGroup = (RadioGroup)findViewById(R.id.rdbGenero);
 
         preference = getSharedPreferences("Immuni", MODE_PRIVATE);
         editor = preference.edit();
@@ -44,11 +44,19 @@ public class MainActivity extends AppCompatActivity {
     public void enviar(View view){
         String Nombre = ptnombre.getText().toString();
         String Edad = ptedad.getText().toString();
+        String Genero = "";
+        int checkedRadioButtonId = radioGroup.getCheckedRadioButtonId();
+        if (checkedRadioButtonId == -1)  {
+        }
+        else{ if (checkedRadioButtonId == R.id.radioButtonM) {
+            Genero = "Masculino";
+        }else{Genero = "femenino";} }
 
         JSONObject ImmuniItems = new JSONObject();
         try {
             ImmuniItems.put("Nombre", Nombre);
             ImmuniItems.put("Edad", Edad);
+            ImmuniItems.put("Genero", Genero);
         } catch (JSONException e) {
             e.printStackTrace();
         }

@@ -811,8 +811,9 @@ id progress_horizontal
 id ptedad
 id ptnombre
 id radio
-id radioButton
-id radioButton2
+id radioButtonF
+id radioButtonM
+id rdbGenero
 id right
 id right_icon
 id right_side
